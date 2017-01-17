@@ -47,6 +47,8 @@ ramips_setup_interfaces()
 	3g300m | \
 	linkits7688 | \
 	linkits7688d | \
+	taida | \
+	taida32m | \
 	microwrt | \
 	w150m | \
 	zte-q7 | \
@@ -383,6 +385,11 @@ ramips_setup_macs()
 		;;
 	linkits7688 | \
 	linkits7688d)
+		wan_mac=$(mtd_get_mac_binary factory 4)
+		lan_mac=$(mtd_get_mac_binary factory 46)
+		;;
+	taida | \
+	taida32m)
 		wan_mac=$(mtd_get_mac_binary factory 4)
 		lan_mac=$(mtd_get_mac_binary factory 46)
 		;;
